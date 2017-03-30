@@ -1,0 +1,148 @@
+    <!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="de-DE"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="de-DE"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="de-DE"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="de-DE"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<title>ns in ka</title>
+
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" lang="de" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <link rel="stylesheet" href="styles/dependencies-bundle.css" />
+        <link rel="stylesheet" href="styles/app.css" />
+
+        <!--<link href="https://fonts.googleapis.com/css?family=Space+Mono|Material+Icons" rel="stylesheet">-->
+	</head>
+
+    <body>
+
+    <nav>
+        <ul class="main">
+            <li><a href="#">Stadtrundgang</a></li>
+            <li><a href="#">Themen</a>
+                <!--<ul>
+                    <li><a href="#">Test</a>
+                    <li><a href="#">Test</a>
+                </ul>-->
+            </li>
+            <li><a href="#">Chronik</a></li>
+            <li><a href="#">Projekte</a></li>
+            <li><a href="#">Über uns</a></li>
+
+        </ul>
+        <ul class="tiny">
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Quellen</a></li>
+        </ul>
+    </nav>
+    <main>
+        <layer id="logo" opened="true">
+            <layer-content data-jsaction="transformlogo,cloneHeader">
+                <header>
+                    <button data-jsaction="openmenu(test,bla)" class="hamburger hamburger--squeeze" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <div id="logo__container">
+                        <span>Stadtrundgang auf den <br />
+                        Spuren des Dritten Reichs<br />
+                        <br /></span>
+                        <div id="logo__container__logo">N<span>ationalsozialismu</span>s<br />
+                        in Ka<span>rlsruhe</span></div>
+                    </div>
+                    <form data-jsaction="search">
+                        <fieldset>
+                            <input type="search" />
+                            <button class="material-icons">&#xE8B6;</button>
+                        </fieldset>
+                    </form>
+                </header>
+            </layer-content>
+        </layer>
+        <div class="content">
+            <div class="content__wrapper">
+                <layer id="quicklinks" opened="true" whileOpenClose="footer" scrollable="true" handle=">layer-content">
+                    <layer-content data-jsaction="quicklinks">
+                        <layer-content-header>Themen</layer-content-header>
+                        <layer-content-opened class="indented">
+                            <ol>
+                                <li><a href="#">Alltagsleben</a></li>
+                                <li><a href="#">Kommunalpolitik</a></li>
+                                <li><a href="#">Verfolgung</a></li>
+                                <li><a href="#">Widerstand</a></li>
+                                <li><a href="#">Zwangsarbeit in Karlsruhe</a></li>
+                            </ol>
+                        </layer-content-opened>
+                    </layer-content>
+                    <article style="background-color: #E3F2FD">
+                        <div class="breadcrumb">Themen</div>
+                        <div class="article-content-wrapper">
+                            <h1>Alltagsleben im Nationalsozialismus in Karlsruhe</h1>
+                            <div class="article_meta article_meta--update">letzte Änderung 18.11.2016 10:30 Uhr</div>
+                            <p>Die nationalsozialistische Machtübernahme veränderte das Alltagsleben der Menschen im Deutschen Reich nachhaltig. So war es zum Beispiel ein Verstoß gegen die sittliche Ordnung den neu eingeführten Hitlergruß nicht auszuführen, obwohl jener nie gesetzlich geregelt wurde. Und es war nicht nur der alltägliche Umgang miteinander, der vom Nationalsozialismus beeinflusst wurde. Sämtliche Arbeitsplätze wurden, nach der Massenarbeitslosigkeit in den 30er Jahren, von Hitler und dessen Politik abhängig.</p>
+
+                            <p>So wurde beispielsweise mit dem "Ehestandsdarlehen" in die intimste Privatsphäre der Bürgerinnen und Bürger politisch eingegriffen.</p>
+
+                            <h2 class="collapseable collapseable--headline">Das ist ein Accordion</h2>
+                            <div class="collapseable collapseable--content">
+                                <h3>Accordion</h3>
+                                <p>Die nationalsozialistische Machtübernahme veränderte das Alltagsleben der Menschen im Deutschen Reich nachhaltig. So war es zum Beispiel ein Verstoß gegen die sittliche Ordnung den neu eingeführten Hitlergruß nicht auszuführen, obwohl jener nie gesetzlich geregelt wurde. Und es war nicht nur der alltägliche Umgang miteinander, der vom Nationalsozialismus beeinflusst wurde. Sämtliche Arbeitsplätze wurden, nach der Massenarbeitslosigkeit in den 30er Jahren, von Hitler und dessen Politik abhängig.</p>
+
+                                <p>So wurde beispielsweise mit dem "Ehestandsdarlehen" in die intimste Privatsphäre der Bürgerinnen und Bürger politisch eingegriffen.</p>
+                            </div>
+
+                            <form>
+                                <fieldset>
+                                    <label>
+                                        <span>Anrede</span>
+                                        <div class="select-wrapper">
+                                            <select>
+                                                <option>Frau</option>
+                                                <option>Herr</option>
+                                            </select>
+                                        </div>
+                                    </label>
+                                    <label>
+                                        <span>Name</span>
+                                        <input type="text">
+                                    </label>
+                                    <label>
+                                        <span>Name</span>
+                                        <textarea></textarea>
+                                    </label>
+                                    <button>Senden</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </article>
+                    <!--<layer closeParentOnOpen="true" handle=">layer-content">
+                        <layer-content>
+                            <layer-content-header>Stadtrundgang</layer-content-header>
+                            <layer-content-opened>
+                            <a href="test.html">test</a>
+                                Test<br />Test<br />Test<br />Test<br />Test<br />Test<br />Test<br />
+                            </layer-content-opened>
+                        </layer-content>
+                    </layer>-->
+                </layer>
+
+            </div>
+        </div>
+    </main>
+
+
+        <script src="scripts/dependencies-bundle.js" defer></script>
+        <script src="scripts/app.js" defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQiebzV3eyj07txhhmmreEA6sYxrY3r5g&callback=NSINKA_gMap"
+        defer></script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+@import '_reset';
+@import '_globals';
+@import '_fonts';
+
+@import "../images/sassvg/sassvg.scss";
+@import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers";
+
+html {
+    font-size: $basic_font_size;
+    -webkit-backface-visibility: hidden;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "magma app",
+  "description": "",
+  "main": "",
+  "authors": [
+    "magma"
+  ],
+  "license": "MIT License",
+  "keywords": [
+    "gulp"
+  ],
+  "homepage": "http://magma.design",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jQuery": "*",
+    "underscore": "^1.8.3",
+    "slick-carousel": "^1.6.0",
+    "css-hamburgers": "^0.7.0",
+    "gh3": "^1.0.3"
+  },
+  "resolutions": {
+    "underscore": "1.6.0"
+  }
+}

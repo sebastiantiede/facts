@@ -1,0 +1,24 @@
+{
+  "name": "openfacts",
+  "version": "1.0.0",
+  "description": "magma web app generator package.json",
+  "author": "Sebastian Tiede @ magma",
+  "url": "http://magma.design",
+  "license": "MIT License",
+  "keywords": "gulp",
+  "devDependencies": {
+    "browser-sync": "*",
+    "bs-rewrite-rules": "^2.1.0",
+    "connect-modrewrite": "^0.9.0",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-connect-php": "0.0.8",
+    "gulp-nunjucks": "^2.3.0",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-ruby-sass": "*",
+    "gulp-sassvg": "^1.5.0",
+    "gulp-sourcemaps": "*",
+    "gulp-util": "*"
+  }
+}

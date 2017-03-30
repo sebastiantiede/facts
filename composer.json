@@ -1,0 +1,15 @@
+{
+    "name": "magma/facts",
+    "require": {
+        "phpoffice/phpexcel": "^1.8"
+    },
+    "authors": [
+        {
+            "name": "Sebastian Tiede",
+            "email": "tiede@magmabranddesign.de"
+        }
+    ],
+    "config": {
+        "vendor-dir": "dist/vendor"
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="90.037px" height="74.784px" viewBox="0 0 90.037 74.784" enable-background="new 0 0 90.037 74.784" xml:space="preserve">
+<g>
+	<path id="logo_third_elem" fill="#648DC5" d="M90.032,53.686c-0.037-0.428-0.223-0.738-0.223-0.738L60.101,3.303l-0.045-0.075
+		c-0.053-0.066-0.131-0.111-0.219-0.118c-0.008-0.001-0.016-0.003-0.023-0.003L59.8,3.108c-0.413-0.007-1.403,0.14-2.288,1.556
+		c-0.406,0.653-7.112,12.67-7.136,12.716l23.072,37.393l16.134,0.002C89.859,54.497,90.069,54.111,90.032,53.686z">
+    </path>
+	<path id="logo_second_elem" fill="#BFDBE8" d="M39.373,0.001h-0.008c0,0-0.716-0.068-1.354,0.742C37.979,0.782,4.162,49.039,0.387,54.425
+		c-0.1,0.104-0.184,0.223-0.247,0.353C0.051,54.959,0,55.165,0,55.384c0,0.353,0.133,0.674,0.351,0.917
+		c0.037,0.034,0.075,0.072,0.115,0.113c2.849,2.819,17.351,16.391,17.351,16.391c-0.008-0.057-0.089-0.72,0.234-1.359
+		c3.387-7.729,36.777-67.711,37.002-68.059c0.967-1.494,2.439-1.558,2.522-1.558L39.373,0.001z"/>
+	<path id="logo_first_elem" fill="#30539C" d="M29.061,57.437h-0.667c-4.195,7.771-7.432,13.914-8.37,16.053c-0.03,0.071-0.058,0.138-0.082,0.204
+		c-0.035,0.088-0.063,0.181-0.083,0.276c-0.016,0.085-0.026,0.176-0.026,0.266c0,0.195,0.042,0.381,0.113,0.549
+		c0.878-0.22,1.743-0.438,2.596-0.652c65.011-16.349,64.351-16.185,65.05-16.355c0.487-0.117,0.59-0.33,0.6-0.34H29.061z"/>
+</g>
+
+<animate id="ani_logo_first_elem" xlink:href="#logo_first_elem"
+    attributeName="opacity"
+    begin="0s;ani_logo_third_elem.end" dur="0.5s"
+    from="1" to=".25"  />
+
+<animate id="ani_logo_first_elem_in" xlink:href="#logo_first_elem"
+    attributeName="opacity"
+    begin="ani_logo_first_elem.end" dur="0.5s"
+    from=".25" to="1"  />
+
+<animate id="ani_logo_second_elem" xlink:href="#logo_second_elem"
+    attributeName="opacity"
+    begin="ani_logo_first_elem.end" dur="0.5s"
+    from="1" to=".25"  />
+
+<animate id="ani_logo_second_elem_in" xlink:href="#logo_second_elem"
+    attributeName="opacity"
+    begin="ani_logo_second_elem.end" dur="0.5s"
+    from=".25" to="1"  />
+
+<animate id="ani_logo_third_elem" xlink:href="#logo_third_elem"
+    attributeName="opacity"
+    begin="ani_logo_second_elem.end" dur="0.5s"
+    from="1" to=".25"  />
+
+<animate id="ani_logo_third_elem_in" xlink:href="#logo_third_elem"
+    attributeName="opacity"
+    begin="ani_logo_third_elem.end" dur="0.5s"
+    from=".25" to="1"  />
+
+</svg>

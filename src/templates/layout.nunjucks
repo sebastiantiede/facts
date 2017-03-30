@@ -1,0 +1,9 @@
+    {% include "partials/head.html" %} 
+
+    <body>
+        {% block content %} {% endblock %}
+        <script src="scripts/dependencies-bundle.js" defer></script>
+        <script src="scripts/app.js" defer></script>   
+        defer></script>          
+    </body>
+</html>
