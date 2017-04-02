@@ -1,5 +1,5 @@
 {
-    "fact" : "Die Welt ist schön!",
+    "fact" : "Die Welt ist schön 3!",
     "alternatives" : [
         {
             "postfact" : "Die Welt ist nicht schön!"
