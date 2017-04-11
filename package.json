@@ -14,11 +14,13 @@
     "gulp-autoprefixer": "*",
     "gulp-concat": "*",
     "gulp-connect-php": "0.0.8",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-nunjucks": "^2.3.0",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-ruby-sass": "*",
     "gulp-sassvg": "^1.5.0",
     "gulp-sourcemaps": "*",
-    "gulp-util": "*"
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "*",
   }
 }

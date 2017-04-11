@@ -82,6 +82,14 @@ var F_Global = {
             dataType: "html",
         });
     },
+    randomColor: function() {
+        var letters = '0123456789ABCDEF',
+            color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    },
     /**
     * Description for tmpl
     * @private
@@ -94,5 +102,10 @@ var F_Global = {
         data = { data : data } || { data : {} };
 
         return _.template($('#tmpl_'+id).clone().text())(data);
+    },
+    history: {
+        set: function(title, url) {
+            history.pushState({}, title, url);
+        }
     }
 }

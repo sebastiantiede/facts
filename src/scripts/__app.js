@@ -2,7 +2,10 @@ var transitionEndTrigger = 'transitionend webkitTransitionEnd oTransitionEnd MST
 
 $(window).ready(function() {
     F_Global.init();
+    F_UI.init();
+    F_Git.init();
+    F_Facts.init();
 }).scroll(function() {
 }).resize(function() {
-
+    $(this).trigger('resize__tooltip');
 });

@@ -9,8 +9,10 @@ var modRewrite  = require('connect-modrewrite');
 var nunjucksRender = require('gulp-nunjucks-render');
 var php = require('gulp-connect-php');
 var sassvg = require('gulp-sassvg');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
 
-var dist = './dist',
+var dist = './' + (gutil.env.type === 'production' ? 'docs' : 'dist'),
     src = './src',
     styles = '/styles',
     scripts = '/scripts',
@@ -23,17 +25,19 @@ var dependencies = {
         bower_components + '/jQuery/dist/jquery.min.js',
         bower_components + '/underscore/underscore.js',
         bower_components + '/slick-carousel/slick/slick.min.js',
-        bower_components + '/gh3/gh3.js'
+        bower_components + '/gh3/gh3.js',
+        bower_components + '/rrssb/js/rrssb.min.js'
     ],
     css: [
         bower_components + '/slick-carousel/slick/slick.css',
+        bower_components + '/rrssb/css/rrssb.css'
     ]
 };
 
 
 gulp.task('sass', function () {
     console.log(dist+styles,src+styles);
-	return sass(src+styles+'/app.scss', {sourcemap: true})
+	return sass(src+styles+'/app.scss', {sourcemap: true, style: (gutil.env.type === 'production' ? 'compressed' : 'nested')})
     .on('error', sass.logError)
 	.pipe(sourcemaps.write())
 	.pipe(sourcemaps.init({loadMaps: true}))
@@ -55,9 +59,9 @@ gulp.task('sassvg', function(){
 gulp.task('js', function() {
   return gulp.src(src+scripts+'/**/*.js', { sourcemap: true})
     .pipe(sourcemaps.init())
-      .pipe(concat('app.js'))
-      //only uglify if gulp is ran with '--type production'
-      .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(concat('app.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist+scripts))
 	.pipe(browserSync.stream());
@@ -76,13 +80,21 @@ gulp.task("css-dependencies-bundle", function () {
 });
 
 gulp.task("html", function () {
-    return gulp.src(src+'/**/*.+(html|nunjucks)')
+    return gulp.src(src+'/**/*.(html|nunjucks)')
         .pipe(nunjucksRender({
             path: [src+'/templates']
         }))
         .pipe(gulp.dest(dist))
         .pipe(browserSync.stream());
 });
+
+gulp.task("html-min", function () {
+    return gulp.src(dist+'/**/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(dist))
+        .pipe(browserSync.stream());
+});
+
 
 gulp.task('watch', function() {
 	browserSync.init({
@@ -92,6 +104,7 @@ gulp.task('watch', function() {
         notify: false,
         files: dist+styles+'/app.css',
     });
+
 
     gulp.watch(src+styles+'/**/*.scss', ['sass'])
         .on('change', function(event){
@@ -108,8 +121,9 @@ gulp.task('watch', function() {
             console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
         });
 
+    /*
     gulp.watch('./*.html')
-        .on('change', browserSync.reload);
+        .on('change', browserSync.reload);*/
 
     gulp.watch(src+'/**/*.+(html|nunjucks)', ['html'])
         .on('change', function(event){
@@ -117,6 +131,9 @@ gulp.task('watch', function() {
         });
 });
 
-gulp.task('default', ['sassvg', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle', 'watch']);
+/* usage: gulp */
 
-gulp.task('dev', ['sass']);
+gulp.task('default', ['html', 'sassvg', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle', 'watch']);
+
+/* usage: gulp build --type=production */
+gulp.task('build', ['html', 'html-min', 'sassvg', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle']);
