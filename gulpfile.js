@@ -80,7 +80,7 @@ gulp.task("css-dependencies-bundle", function () {
 });
 
 gulp.task("html", function () {
-    return gulp.src(src+'/**/*.(html|nunjucks)')
+    return gulp.src(src+'/**/*.+(html|nunjucks)')
         .pipe(nunjucksRender({
             path: [src+'/templates']
         }))
@@ -88,7 +88,8 @@ gulp.task("html", function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task("html-min", function () {
+gulp.task("html-min", ["html"], function () {
+    console.log(dist+'/**/*.html');
     return gulp.src(dist+'/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(dist))
@@ -116,10 +117,6 @@ gulp.task('watch', function() {
             console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
         });
 
-    gulp.watch(src+'/images/svg/**/*.svg', ['sassvg'])
-        .on('change', function(event){
-            console.log('File' + event.path + ' was ' + event.type + ', running tasks...')
-        });
 
     /*
     gulp.watch('./*.html')
@@ -133,7 +130,7 @@ gulp.task('watch', function() {
 
 /* usage: gulp */
 
-gulp.task('default', ['html', 'sassvg', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle', 'watch']);
+gulp.task('default', ['html', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle', 'watch']);
 
 /* usage: gulp build --type=production */
-gulp.task('build', ['html', 'html-min', 'sassvg', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle']);
+gulp.task('build', ['html', 'html-min', 'sass', 'js', 'js-dependencies-bundle', 'css-dependencies-bundle']);
