@@ -94,8 +94,13 @@ var F_Facts = {
 
 function getRandItemsOfArray(array, length) {
     var aLength = array.length;
-    array = array[Math.floor(Math.random()*array.length)];
-    console.log(length , aLength);
+    var j, x, i;
+    for (i = array.length; i; i--) {
+        j = Math.floor(Math.random() * i);
+        x = array[i - 1];
+        array[i - 1] = array[j];
+        array[j] = x;
+    }
     if(length < aLength) {
         array = array.splice(0, length);
     }
