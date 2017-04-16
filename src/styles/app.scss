@@ -89,11 +89,14 @@ header {
     .fact__alternatives {
         counter-reset: tooltip_fact_alternatives;
         margin-bottom: 20px;
+        text-align: center;
         &__wrapper {
             display: flex;
             font-size: 0;
             color: transparent;
             justify-content: center;
+            margin: 20px 0;
+            text-align: center;
             li {
                 display: block;
                 padding: 20px;
@@ -121,6 +124,13 @@ header {
             }
         }
     }
+    .rrssb-buttons {
+        text-align: center;
+        li {
+            float: none;
+            display: inline-block;
+        }
+    }
     &:after {
         content: '';
         width: 0;
@@ -143,7 +153,8 @@ header {
     article {
         width: 100vw;
         height: 100vh;
-        overflow: auto;
+        overflow-x: visible;
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -196,6 +207,8 @@ header {
             position: relative;
             z-index: 10;
             max-width: 600px;
+            box-sizing: border-box;
+            padding: 0 20px;
             margin: 2em auto;
             font-size: _em(24px);
             line-height: _em(30px);
@@ -267,6 +280,14 @@ header {
             &-next {
                 right: 0;
             }
+        }
+
+        @include media_smartphone {
+            display: none;
+        }
+
+        @include media_tablet {
+            display: block;
         }
     }
 }

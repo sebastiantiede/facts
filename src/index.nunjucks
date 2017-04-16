@@ -32,10 +32,12 @@
     </main>
     <script type="template/text" id="tmpl_colorSchemesCSS">
         <style type="text/css" id="colorScheme">
-            header .nav {
+            header .nav,
+            .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
                 background-color: <%= data.color1 %>;
             }    
-            #facts_slideshow {
+            #facts_slideshow,
+            #facts_slideshow .slick-arrow {
                 color: <%= data.color1 %>;
             }            
             #facts_slideshow article.slick-active hgroup:after {

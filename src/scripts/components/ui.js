@@ -38,7 +38,6 @@ var F_UI = {
             var colorSchemes = F_UI.vars.colorSchemes,
                 selectedColors = F_UI.body.getRandColorScheme(),
                 $css = $('#colorScheme');
-            console.log(selectedColors);
             $newCSS = $(F_Global.tmpl('colorSchemesCSS', {
                 color1 : selectedColors[0],
                 color2 : selectedColors[1],
@@ -57,6 +56,7 @@ var F_UI = {
         },
         tooltip: {
             $tootltip: false,
+            timeout: false,
             show: function($target, content) {
                 if(F_UI.body.tooltip.$tootltip.length) {
                     F_UI.body.tooltip.$tootltip.remove();
@@ -72,6 +72,18 @@ var F_UI = {
                         top: $target.offset().top-($target.height()/2)
                     })
                 }).trigger('resize__tooltip');
+
+                $target.add(F_UI.body.tooltip.$tootltip).mousemove(function() {
+                    clearTimeout(F_UI.body.tooltip.timeout);
+                }).mouseout(function() {
+                    clearTimeout(F_UI.body.tooltip.timeout);
+                    F_UI.body.tooltip.timeout = setTimeout(function() {
+                        F_UI.body.tooltip.$tootltip.fadeOut(function() {
+                            $(this).remove();
+                        });
+                    }, 1000);
+
+                });
 
             },
 
