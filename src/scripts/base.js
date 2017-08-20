@@ -13,7 +13,10 @@ var F_Global = {
     * @return {Object} description
     */
     init: function() {
-
+        F_Global.setBaseURL();
+    },
+    setBaseURL: function() {
+        F_Global.vars.baseURL = window.location.href.replace(/\/#[^#]+$/, '');
     },
     /**
     * Description for is_mobile
@@ -105,7 +108,7 @@ var F_Global = {
     },
     history: {
         set: function(title, url) {
-            history.pushState({}, title, url);
+            history.pushState({}, title, F_Global.vars.baseURL+url);
         }
     }
 }

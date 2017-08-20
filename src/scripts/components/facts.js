@@ -33,7 +33,7 @@ var F_Facts = {
                 var $slide = F_Facts.vars.$slideshow.find('.slick-current'),
                     thisFact = $slide[0].factData,
                     thisFile = $slide[0].factFile;
-                F_Global.history.set($slide.find('h1').text(), window.location.origin + thisFile.replace(/.*(\/[^\/]+\/[^\/]+)$/, '#!$1'));
+                F_Global.history.set($slide.find('h1').text(), thisFile.replace(/.*(\/[^\/]+\/[^\/]+)$/, '#!$1'));
             });
 
 
