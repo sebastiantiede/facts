@@ -1,8 +1,67 @@
-<!doctype html><!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="de-DE"> <![endif]--><!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="de-DE"> <![endif]--><!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="de-DE"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="de-DE"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="content-type" content="text/html; charset=utf-8"><title>openfacts</title><meta name="author" content=""><meta name="keywords" content=""><meta name="description" lang="de" content=""><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,900,900i;Material+Icons" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="styles/dependencies-bundle.css"><link rel="stylesheet" href="styles/app.css"></head><body><noscript>Fact ist, dass Dein Browser zu alt ist!</noscript><header><button class="hamburger hamburger--collapse"><div class="hamburger-box"><div class="hamburger-inner"></div></div></button><nav class="nav"><ul class="nav__primary"><li>Startseite</li><li>Meine Fakten</li><li>Mitmachen</li></ul><ul class="nav__secondary"><li>Kontakt</li><li>Impressum</li><li>Datenschutz</li><li><a class="github-button" href="https://github.com/sebastiantiede/facts" data-style="mega" data-count-href="/sebastiantiede/facts/stargazers" data-count-api="/repos/sebastiantiede/facts#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sebastiantiede/facts on GitHub">Star</a></li></ul></nav></header><main><div id="facts_slideshow"></div></main><script type="template/text" id="tmpl_colorSchemesCSS"><style type="text/css" id="colorScheme">
-            header .nav {
+    <!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" lang="de-DE"> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" lang="de-DE"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" lang="de-DE"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="de-DE"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<title>openfacts</title>
+
+		<meta name="author" content="" />
+		<meta name="keywords" content="" />
+		<meta name="description" lang="de" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,900,900i;Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles/dependencies-bundle.css" />
+        <link rel="stylesheet" href="styles/app.css" />
+	</head>
+
+
+    <body>
+
+    <noscript>
+        Fact ist, dass Dein Browser zu alt ist!
+    </noscript>
+    <header>
+        <button class="hamburger hamburger--collapse">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </button>
+        <nav class="nav">
+            <ul class="nav__primary">
+                <li>Startseite</li>
+                <li>Meine Fakten</li>
+                <li>Mitmachen</li>
+            </ul>
+            <ul class="nav__secondary">
+                <li>Kontakt</li>
+                <li>Impressum</li>
+                <li>Datenschutz</li>
+                <li>
+                    <a class="github-button" href="https://github.com/sebastiantiede/facts" data-style="mega" data-count-href="/sebastiantiede/facts/stargazers" data-count-api="/repos/sebastiantiede/facts#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sebastiantiede/facts on GitHub">Star</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="facts_slideshow">
+        </div>
+    </main>
+    <script type="template/text" id="tmpl_colorSchemesCSS">
+        <style type="text/css" id="colorScheme">
+            header .nav,
+            .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
                 background-color: <%= data.color1 %>;
             }
-            #facts_slideshow {
+            #facts_slideshow,
+            #facts_slideshow .slick-arrow {
                 color: <%= data.color1 %>;
             }
             #facts_slideshow article.slick-active hgroup:after {
@@ -11,25 +70,51 @@
             #facts_slideshow {
                 background-color: <%= data.color3 %>;
             }
-        </style></script><script type="template/text" id="tmpl_factArticle"><article class="fact"> <% if(typeof data.fact !== 'undefined') { %> <hgroup>
+        </style>
+    </script>
+    <script type="template/text" id="tmpl_factArticle">
+        <article class="fact">
+            <% if(typeof data.fact !== 'undefined') { %>
+            <hgroup>
                 <h1><%= data.fact %><br /><a href="#">…</a></h1>
-            </hgroup> <% } %> <% if(data.description) { %> <div class="fact__description"> <%= data.description %> </div> <% } %> <div class="fact__references">
+            </hgroup>
+            <% } %>
+            <% if(data.description) { %>
+            <div class="fact__description">
+            <%= data.description %>
+            </div>
+            <% } %>
+            <div class="fact__references">
                 <button><%= data.references.length %> Sources <span class="material-icons">&#xE876;</span></button>
-                <ul> <% _.each(data.references, function(reference) { %> <li><%= reference.title %></li> <% }) %> </ul>
+                <ul>
+                    <% _.each(data.references, function(reference) { %>
+                    <li><%= reference.title %></li>
+                    <% }) %>
+                </ul>
             </div>
             <div class="fact__relatives">
                 <div class="fact__relatives__h1">Related facts</div>
                 <ul class="relatives">
                 </ul>
             </div>
-        </article></script><script type="template/text" id="tmpl_factArticleRelative"><li class="relatives__relative" style="background-color: <%= data.backgroundColor %>">
+        </article>
+    </script>
+    <script type="template/text" id="tmpl_factArticleRelative">
+        <li class="relatives__relative" style="background-color: <%= data.backgroundColor %>">
             <div class="relatives__relative__h1"><%= data.fact %></div>
-        </li></script><script type="template/text" id="tmpl_factTooltip"><div class="tooltip">
+        </li>
+    </script>
+    <script type="template/text" id="tmpl_factTooltip">
+        <div class="tooltip">
             <div class="tooltip__wrapper">
                 <div class="fact__alternatives">
                     Alternatives
                     <ul class="fact__alternatives__wrapper">
-                        <li><%= data.fact %></li> <% _.each(data.references, function(reference) { %> <li><%= reference.title %></li> <% }) %> </ul>
+                        <li><%= data.fact %></li>
+                    <% _.each(data.references, function(reference) { %>
+                        <li><%= reference.title %></li>
+                    <% }) %>
+                    </ul>
                     <div class="fact__alternatives__hover"></div>
                 </div>
 
@@ -62,4 +147,11 @@
                     <li>git</li>
                 -->
             </div>
-        </div></script><script src="scripts/dependencies-bundle.js" defer="defer"></script><script src="scripts/app.js" defer="defer"></script><script async defer="defer" src="https://buttons.github.io/buttons.js"></script></body></html>
+        </div>
+    </script>
+
+        <script src="scripts/dependencies-bundle.js" defer></script>
+        <script src="scripts/app.js" defer></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body>
+</html>
